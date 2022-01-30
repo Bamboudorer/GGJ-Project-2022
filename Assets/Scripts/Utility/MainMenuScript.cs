@@ -8,11 +8,16 @@ public class MainMenuScript : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Enter Cinematics");
     }
 
     public void QuittGame()
     {
         Application.Quit();
+    }
+
+    public void DisplayCredits()
+    {
+        SceneManager.LoadScene("CreditsScene");
     }
 }
