@@ -7,6 +7,8 @@ public class DoorActivationScript : MonoBehaviour
     [SerializeField] private bool triggerActive = false;
     [SerializeField] private bool activateAnimation = false;
     [SerializeField] private Animator doorAnimator;
+    [SerializeField] private bool isDebug = false;
+
 
     void Start()
     {
@@ -18,12 +20,12 @@ public class DoorActivationScript : MonoBehaviour
     {
         if (triggerActive && Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("Open the Door");
+            if (isDebug)
+                Debug.Log("Open the Door");
+
             activateAnimation = !activateAnimation;
-            // doorAnimator.SetBool("StartAction", true);
             doorAnimator.SetBool("DoorOpen", activateAnimation);
         }
-        // doorAnimator.SetBool("StartAction", activateAnimation);
     }
 
     private void OnTriggerEnter(Collider other) {
